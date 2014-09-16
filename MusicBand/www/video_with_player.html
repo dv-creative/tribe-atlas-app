@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+<!-- Basic Meta and Title -->
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="container splsh_container splsh_container2" style="display: table;">
+
+
+<!--header start-->
+    <header>
+    	<div class="col-md-12" style="display: inline-block;padding: 0;width: 100%;">
+        	<div class="col-xs-2" style="padding:4px 0 0 15px;" onclick="backButton()">
+            	<button type="button" class="btn btn-custom"><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            <div class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:25px;"><i class="fa fa-share-square-o"></i></span></button></div>
+                <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="homeButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-home"></i></span></button></div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    
+    
+    <!--content start-->
+     <div class="container" style="padding:0;top:45px;position:relative;">
+     	<div class="col-md-12" style="padding:0;">
+        	<div class="col-md-12" style="padding:0;">
+            	<img onclick="playVideoOnFullScreen()" width="100%" src="images/video_vertical.png">
+            </div>
+            
+            <div class="col-md-12" style="margin:20px 0;">
+            	<div class="video_heading_vertical">
+                	<h1>Song #2</h2>
+                    <p>The Making Of Atlas</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+            	<a href="#" class="video_thum_list">
+                    <div class="col-xs-12" style="padding:0;">
+                        <div class="col-xs-6" style="padding-right:10px;">
+                            <img width="100%" src="images/video_preview.png">
+                        </div>
+                        <div class="col-xs-6" style="padding-left:0px;">
+                            <h1>BURN THE EMPIRE</h1>
+                            <p>Making Of ATLAS</p>
+                        </div>                   
+                    </div>
+                </a>
+                <a href="#" class="video_thum_list">
+                    <div class="col-xs-12" style="padding:0;">
+                        <div class="col-xs-6" style="padding-right:10px;">
+                            <img width="100%" src="images/video_preview.png">
+                        </div>
+                        <div class="col-xs-6" style="padding-left:0px;">
+                            <h1>BURN THE EMPIRE</h1>
+                            <p>Making Of ATLAS</p>
+                        </div>                   
+                    </div>
+                </a>
+                <a href="#" class="video_thum_list">
+                    <div class="col-xs-12" style="padding:0;">
+                        <div class="col-xs-6" style="padding-right:10px;">
+                            <img width="100%" src="images/video_preview.png">
+                        </div>
+                        <div class="col-xs-6" style="padding-left:0px;">
+                            <h1>BURN THE EMPIRE</h1>
+                            <p>Making Of ATLAS</p>
+                        </div>                   
+                    </div>
+                </a>
+            </div>
+        </div>
+     </div>  
+     
+        
+    <!--content end-->
+    
+    
+    <!--footer end-->
+    <footer>
+    
+    </footer>
+<!--footer end-->
+</div>
+
+
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" charset="utf-8" src="pg-plugin-screen-orientation.js"></script>
+    <script type="text/javascript" src="js/cordova-2.6.0.js"></script>
+     <script type="text/javascript" src="js/SocialSharing.js"></script>
+     
+    
+    <script type="text/javascript">
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {  
+
+navigator.screenOrientation.set('portrait');    
+} 
+
+function backButton()
+{
+window.location.href = 'video.html'; 
+}
+function homeButton()
+{
+window.location.href = 'home.html'; 
+}
+function playVideoOnFullScreen()
+{
+window.location.href = 'video_fullscreen_with_thumbnails.html'; 
+}
+
+function onShare()
+{
+	
+    window.plugins.socialsharing.share('CodeWare Technologies ',
+      null,
+      null,
+      'http://codewaretechnologies.com');  
+            
+}
+
+
+</script>
+
+    
+</body>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+</html>

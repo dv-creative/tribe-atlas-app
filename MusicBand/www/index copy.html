@@ -1,0 +1,964 @@
+<!doctype html>
+<html>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+<!-- Basic Meta and Title -->
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    
+    
+    <div id="home_page" class="container splsh_container" style="display:none;">
+        <!--header start-->   <!--header end-->
+        <!--content start-->
+        <div class="col-md-12 first_srcreen">
+            <div class="col-md-12" style="padding:0;">
+           		<div onclick="shareviaFB()" class="social_button fb"><a href="#" ><img src="images/fb_icon.png"></a></div>
+            </div>
+            <div class="col-md-12" style="padding:0;">
+           		<div onclick="shareviaTwitter()" class="tw"><a href="#" ><img src="images/twitter_icon.png"></a></div>
+            </div>
+            <div class="col-md-12" >
+           		<div class="logo_div">
+                	<img src="images/logo.png">
+                        </div>
+            </div>
+            <div class="col-md-12" style="padding:0;">
+                <div class="startup_player_button">
+                    <a href="#"><img onclick="playAlbumHomeScreen()" src="images/play_icon.png"></a>
+                </div>
+                <p class="button_name">PLAY ALBUM</p>
+            </div>
+            
+            <div class="col-md-12" style="padding:0;bottom: 0;display: flex;padding: 0;position: static;">
+           		<div class="bottom_navigation">
+                	<ul>
+                        <li><a href="#" onclick="getMusicList()">MUSIC</a></li>
+                        <li><a href="#" onclick="videolistOpen()">VIDEO</a></li>
+                        <li><a href="#" onclick="photoListOpen()">PHOTOS</a></li>
+                        <li><a href="#" onclick="tribeListOpen()">TRIBE</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!--content end-->
+        <!--footer end-->
+        <footer>
+        </footer>
+        <!--footer end-->
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="music_listing_page" class="container splsh_container" style="display:none;">
+        
+        <!--header start-->
+        <header>
+            <div class="col-md-12" style="display: inline-block;width: 100%;padding: 6px 0px 0px;">
+                <div onclick="backButton()" class="col-xs-2" style="padding:4px 0 0 15px;">
+                    
+                    
+                    <button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+                    
+                </div>
+                <div class="col-xs-7 heading_main">
+                    <p>Tribe - Atlas</p>
+                </div>
+                
+                <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+                    <div class="col-xs-6" style="padding-left:0;"></div>
+                    <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom"><span style="color:#fff;font-size:17px;">
+                        <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                    </div>
+                </div>
+                
+            </div>
+        </header>
+        <!--header end-->
+        
+        
+        <!--content start-->
+        <div class="container" style="padding-top:2%;top:45px;position:relative;">
+            <div class="col-xs-12 main_box">
+                <div class="col-xs-5 left_box">
+                    <img src="images/img1.jpg" class="img-responsive">
+                        </div>
+                <div class="col-xs-7 right_box">
+                    <h5>atlas - 2014</h5>
+                    <!-- <center>11 gongs. 35 min</center>  -->
+                    <center><span id="total_songs">11</span> songs. <span id="total_times">11</span> min</center>
+                </div>
+            </div><!-----/main box------>
+            <div class="col-xs-12" style="padding:0;">
+                <ul class="nav nav-tabs custom_tab" role="tablist">
+                    <li class=" col-xs-3 active"><a onclick="playAllTab()" href="#music_list_div" role="tab" data-toggle="tab">play all</a></li>
+                    <li class="col-xs-5"><a href="#itunes" role="tab" data-toggle="tab">add to itunes</a></li>
+                    <li class="col-xs-4"><a onclick="shufflePlayTab()" href="#shuffle_music_list_div" role="tab" data-toggle="tab">shuffle play</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="music_list_div" style="margin-bottom:15px;">
+                    </div><!-----/tab1------>
+                    <div class="tab-pane" id="itunes">2</div>
+                    <div class="tab-pane" id="shuffle_music_list_div" style="margin-bottom:15px;">
+                        3
+                    
+                </div>
+            </div><!------/tabs--------->
+        </div>
+        <!--content end-->
+        
+        <!--footer end-->
+        <footer>
+            
+        </footer>
+        <!--footer end-->
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--loading screen start-->
+    <div id="loading" style="display:none;">
+        <h4 > Please Wait .... </h4>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div id="music_player" class="container splsh_container" style="display:none;">
+        
+        
+        <!--header start-->
+        <header style="position: absolute;width: 100%;z-index: 1000;">
+            <div class="col-md-12" style="display: inline-block;padding: 10px 0px 0px;width: 100%;">
+                <div onclick="getMusicList()" class="col-xs-2" style="padding:4px 0 0 15px;">
+                    <button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+                </div>
+                <div class="col-xs-7 heading_main">
+                    <p>Tribe - Atlas</p>
+                </div>
+                <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+                    <div class="col-xs-6" style="padding-left:0;"></div>
+                    <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:17px;">
+                        <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+        
+        
+        <!--content start-->
+        <div class="container player-container">
+            <div class="col-md-12 first_srcreen snd-srcn" style="">
+                <div class="col-md-12" style="padding: 30% 0;">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-8">
+                        <img width="100%" src="images/logo.png">
+                            </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+            <div class="col-md-12 player_bottom plr-bg">
+                <div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%; padding: 0 6px;">
+                    <div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+                        <p class="song_name_playing song_title">Burn The Empire</p>
+                        <p class="song_name_playing" style="font-size:15px">Tribe - Atlas</p>
+                    </div>
+                    
+                    <div class="col-md-12" style="display:inline-block;float: none;width: 100%;min-width: 100%; padding:0;">
+                        
+                        
+                        
+                        
+                        <span class="media-played time-start" id="media-played" style="text-align:right; padding-right:4px;">000:000</span>
+                        <span style="" class="player-timer"><input  type="range" name="time-slider" id="time-slider" class="time-slider"  value="0" min="0" max="100"  data-highlight="true" /></span>
+                        <span class="media-duration time-end" id="media-duration" style="text-align:left; padding-left:4px;">111:111</span>
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+                        <div class="col-xs-12 player_nav">
+                            <div class="player_control">
+                                <button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="previous_music_button" id="previous_music_button" width="100%" src="images/backward_button.png"></span></button>
+                            </div>
+                            <div class="player_control2" style="padding:0;">
+                                <button type="button" class="btn btn-custom_player"><span style="font-size:52px;"><img class="player-play" id="player-play" width="100%" src="images/play_button.png"></span></button>
+                            </div>
+                            <div class="player_control">
+                                <button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="next_music_button" id="next_music_button" width="100%" src="images/forward_button.png"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 cstm-rng">
+                        <div class="col-xs-2 volume-icon" style="">
+                            <i class="fa fa-volume-down" style="color:#fff;"></i>
+                        </div>
+                        <div class="col-xs-8 cstm-vlm">
+                            <input type="range" class="volume" id="volume" min="0" max="1" step="0.1" value="0.5" />
+                        </div>
+                        <div class="col-xs-2 volume-icon">
+                            <i class="fa fa-volume-up" style="color:#fff;"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-12 btm-playr-mnu">
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player music_repeating">
+                                <span class="change_repeading_icon rfresh">
+                                    <i class="fa fa-repeat"></i> REPEAT
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player music_shuffling">
+                                <span class="change_shuffling_icon sfl">
+                                    <i class="fa fa-random"></i> SHUFFLE
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player" onclick="openLyrics()">
+                                <span class="change_lyrics_icon lrcs">
+                                    <i class="fa fa-list-ul"></i> LYRICS
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player music_info">
+                                <span class="change_musicinfo_icon info" style="">
+                                    <i  class="fa fa-info-circle"></i> INFO
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        <!--content end-->
+        
+        
+        <!--footer end-->
+        
+        <!--footer end-->
+    </div>
+    
+    
+    
+    
+    <div id="music_player_wiht_lyrics" class="container splsh_container" style="display:none;">
+        
+        
+        <!--header start-->
+        <header style="position: fixed;width: 100%;z-index: 1000;">
+            <div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+                <div onclick="backButton()" class="col-xs-2" style="padding:4px 0 0 15px;">
+                    <button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+                </div>
+                <div class="col-xs-7 heading_main">
+                    <p>Tribe - Atlas</p>
+                </div>
+                
+                <!--
+                 <div class="col-xs-3" style="padding:5px 0 0 0;">
+                 <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:25px;"><i class="fa fa-share-square-o"></i></span></button></div>
+                 <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="homeButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-home"></i></span></button></div>
+                 </div>
+                 -->
+                
+                
+                <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+                    <div class="col-xs-6" style="padding-left:0;"></div>
+                    <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom"><span style="color:#fff;font-size:17px;">
+                        <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+            </div>
+        </header>
+        <!--header end-->
+        
+        
+        <!--content start-->
+        <div class="container cntnr">
+            <div class="col-md-12 cstm-plr2">
+                <div class="col-md-12" style="padding-top:5%;">
+                    <div class="col-xs-12" style="padding:0;">
+                        <div class="pull-left" style="padding:0;">
+                            <p style="color:#fff;text-transform:uppercase;font-size:20px;margin:0 0 5px 0;">Lost</p>
+                        </div>
+                        <div class="pull-right" style="padding-right:0;">
+                        	<button type="button" class="btn btn-custom" onclick="minimizeScreen()"><span style="color:#fff;"><img width="55%" src="images/window_icon.png"></span></button>
+                        </div>
+                    </div>
+                    
+                    <p class="lyrics" style="color:#fff;">Come and get lost
+                    in infinite space
+                    leave with no trace
+                    escape with me
+                    
+                    Come down
+                    Gravity , Ecstasy
+                    Crash land
+                    Reality
+                    Goodbye serenity
+                    
+                    The one
+                    Pray to the empty sun
+                    Pray you’re the only one
+                    The one
+                    
+                    We’ve built walls over our heads
+                    with a finger on the trigger
+                    i still want more
+                    
+                    Pray to an empty sky
+                    pray you’re the only one
+                    
+                    Come down
+                    Gravity , Ecstasy
+                    Crash land
+                    Reality
+                    Goodbye serenity
+                    
+                    This is our way
+                    I love how you torture me </p>
+                </div>
+            </div>
+            <div class="col-md-12 player_bottom plr-bg">
+                <div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%; padding: 0 6px;">
+                    <div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+                        <p class="song_name_playing song_title">Burn The Empire</p>
+                        <p class="song_name_playing" style="font-size:15px">Tribe - Atlas</p>
+                    </div>
+                    
+                    <div class="col-md-12" style="display:inline-block;float: none;width: 100%;min-width: 100%; padding:0;">
+                        
+                        
+                        
+                        
+                        <span class="media-played time-start" id="media-played" style="text-align:right; padding-right:4px;">000:000</span>
+                        <span style="" class="player-timer"><input  type="range" name="time-slider" id="time-slider" class="time-slider"  value="0" min="0" max="100"  data-highlight="true" /></span>
+                        <span class="media-duration time-end" id="media-duration" style="text-align:left; padding-left:4px;">111:111</span>
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+                        <div class="col-xs-12 player_nav">
+                            <div class="player_control">
+                                <button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="previous_music_button" id="previous_music_button" width="100%" src="images/backward_button.png"></span></button>
+                            </div>
+                            <div class="player_control2" style="padding:0;">
+                                <button type="button" class="btn btn-custom_player"><span style="font-size:52px;"><img class="player-play" id="player-play" width="100%" src="images/play_button.png"></span></button>
+                            </div>
+                            <div class="player_control">
+                                <button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="next_music_button" id="next_music_button" width="100%" src="images/forward_button.png"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 cstm-rng">
+                        <div class="col-xs-2 volume-icon" style="">
+                            <i class="fa fa-volume-down" style="color:#fff;"></i>
+                        </div>
+                        <div class="col-xs-8 cstm-vlm">
+                            <input type="range" class="volume" id="volume" min="0" max="1" step="0.1" value="0.5" />
+                        </div>
+                        <div class="col-xs-2 volume-icon">
+                            <i class="fa fa-volume-up" style="color:#fff;"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-12 btm-playr-mnu">
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player music_repeating">
+                                <span class="change_repeading_icon rfresh">
+                                    <i class="fa fa-repeat"></i> REPEAT
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player music_shuffling">
+                                <span class="change_shuffling_icon sfl">
+                                    <i class="fa fa-random"></i> SHUFFLE
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player" onclick="closeLyrics()">
+                                <span class="change_lyrics_icon lrcs cstm-icons">
+                                    <i class="fa fa-list-ul"></i> LYRICS
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-center pd">
+                            <button type="button" class="btn btn-custom_player music_info">
+                                <span class="change_musicinfo_icon info" style="">
+                                    <i  class="fa fa-info-circle"></i> INFO
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        <!--content end-->
+        
+        
+        <!--footer end-->
+        
+        <!--footer end-->
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="music_player_wiht_lyrics_minified"  class="container splsh_container splsh_container2" style="display:none;">
+        
+        
+        <!--header start-->
+        <header>
+            <div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+                <div onclick="backButton()" class="col-xs-2" style="padding:4px 0 0 15px;">
+                    <button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+                </div>
+                <div class="col-xs-7 heading_main">
+                    <p>Tribe - Atlas</p>
+                </div>
+                
+                <!--
+                 <div class="col-xs-3" style="padding:5px 0 0 0;">
+                 <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:25px;"><i class="fa fa-share-square-o"></i></span></button></div>
+                 <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="homeButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-home"></i></span></button></div>
+                 </div>
+                 -->
+                
+                
+                <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+                    <div class="col-xs-6" style="padding-left:0;"></div>
+                    <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom"><span style="color:#fff;font-size:17px;">
+                        <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+        </header>
+        <!--header end-->
+        
+        
+        <!--content start-->
+        <div class="container" style="padding-top:2%;top:45px;position:relative;">
+            <div class="col-md-12" style="padding:0;height:50%;position:relative;">
+                <div class="col-md-12" style="padding-top:5%;">
+                    <div class="col-xs-12" style="padding:0;">
+                        <div class="pull-left" style="padding:0;">
+                            <p style="color:#fff;text-transform:uppercase;font-size:20px;margin:0 0 5px 0;">Lost</p>
+                        </div>
+                        
+                        <!--  <div class="pull-right" style="padding-right:0;">
+                         <button type="button" class="btn btn-custom"><span style="color:#fff;"><img width="55%" src="images/window_icon.png"></span></button>
+                         </div> -->
+                        
+                        
+                    </div>
+                    
+                    <p class="lyrics" style="color:#fff;margin-bottom:100px;">Come and get lost
+                    in infinite space
+                    leave with no trace
+                    escape with me
+                    
+                    Come down 
+                    Gravity , Ecstasy 
+                    Crash land 
+                    Reality 
+                    Goodbye serenity 
+                    
+                    The one
+                    Pray to the empty sun 
+                    Pray you’re the only one
+                    The one 
+                    
+                    We’ve built walls over our heads
+                    with a finger on the trigger 
+                    i still want more
+                    
+                    Pray to an empty sky 
+                    pray you’re the only one
+                    
+                    Come down 
+                    Gravity , Ecstasy 
+                    Crash land 
+                    Reality 
+                    Goodbye serenity 
+                    
+                    This is our way
+                    I love how you torture me
+                    Come and get lost 
+                    in infinite space 
+                    leave with no trace 
+                    escape with me 
+                    
+                    Come down 
+                    Gravity , Ecstasy 
+                    Crash land 
+                    Reality 
+                    Goodbye serenity 
+                    
+                    The one
+                    Pray to the empty sun 
+                    Pray you’re the only one
+                    The one 
+                    
+                    We’ve built walls over our heads
+                    with a finger on the trigger 
+                    i still want more
+                    
+                    Pray to an empty sky 
+                    pray you’re the only one
+                    
+                    Come down 
+                    Gravity , Ecstasy 
+                    Crash land 
+                    Reality 
+                    Goodbye serenity 
+                    
+                    This is our way
+                    I love how you torture me
+                    </p>
+                </div>
+            </div>
+        </div>  
+        
+        
+        <!--content end-->
+        
+        
+        <!--footer end-->
+        <div class="col-xs-12 minified_player">
+            <div class="col-xs-3" style="padding:0;">
+                <div class="song_author_img">
+                    <img width="100%" height="100%" src="images/img1.png">
+                        <button onclick="maximizeScreen()" class="btn btn-custom" type="button"><span style="color:#fff;"><img width="55%" src="images/window_icon2.png"></span></button>
+                        </div>
+            </div> 
+            <div class="col-xs-9 mini-player-bottom" style="padding:0;">
+                
+                <div class="col-xs-6 burn-player-div">
+                    <h4 class="burn-text song_title">Burn The Empire</h4>
+                    <span class="tribe-text">TRIBE - ATLAS</span>
+                    
+                </div>
+                <div class="col-xs-6 play-btn-div">
+                    <div class="music-play-btns">
+                        <button type="button" class="btn play-btns-custom">
+                            <img class="previous_music_button" id="previous_music_button" src="images/backward_button.png">
+                                </button>
+                    </div>
+                    <div class="music-play-btns">
+                        <button type="button" class="btn play-btns-custom"><img class="player-play" id="player-play" src="images/play_button.png"></button>
+                    </div>
+                    <div class="music-play-btns">
+                        <button type="button" class="btn play-btns-custom"><img class="next_music_button" id="next_music_button"  src="images/forward_button.png"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer end-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+<div id="video_page" class="container splsh_container splsh_container2" style="display: none;">
+    <!--header start-->
+    <header>
+    	<div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+        	<div onclick="backButton()" class="col-xs-2" style="padding:4px 0 0 15px;">
+            	<button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            
+            <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:17px;">
+                    <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    
+    
+    <!--content start-->
+    <div class="container" style="padding-top:2%;top:45px;position:relative;">
+     	<div class="col-md-12" style="padding:0;">
+        	<div class="col-md-12" style="padding:0;">
+            	<p class="heading_main2">the making of atlas</p>
+            </div>
+            <div id="video_list" class="col-md-12" style="padding:0;">
+            	
+                  
+                
+                  
+            </div>
+        </div>
+    </div>
+    <!--content end-->
+    <!--footer end-->
+    <footer>
+    </footer>
+    <!--footer end-->
+</div>
+
+
+
+
+<div id="photo_page" class="container splsh_container splsh_container2" style="display: none;">
+    <!--header start-->
+    <header>
+    	<div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+        	<div onclick="backButton()" class="col-xs-2" style="padding:4px 0 0 15px;">
+            	<button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom"><span style="color:#fff;font-size:17px;">
+                    <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    <!--content start-->
+    <div class="container" style="padding-top:2%;top:45px;position:relative;">
+     	<div class="col-md-12" style="padding:0;">
+        	<div class="col-md-12" style="padding:0;">
+            	<p class="heading_main2">atlas photo gallery</p>
+            </div>
+            <div id="photo_gallery_list" class="col-xs-12 photo-glry-div" style="padding:0;">
+                
+            </div>
+        </div>
+    </div>
+    <!--content end-->
+    <!--footer end-->
+    <footer>
+    </footer>
+    <!--footer end-->
+</div>
+
+
+<div id="tribe_page" class="container splsh_container splsh_container2" style="display: none;">
+    <!--header start-->
+    <header>
+    	<div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+        	<div onclick="backButton()" class="col-xs-2" style="padding:4px 0 0 15px;">
+            	<button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom"><span style="color:#fff;font-size:17px;">
+                    <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    
+    
+    <!--content start-->
+    <div class="container" style="padding:0; top:45px;position:relative;">
+     	<div class="col-md-12 tribe-bg">
+        	<img src="images/tribe-bg.png">
+                </div>
+        <div class="col-md-12 tab_div">
+        	<ul class="nav nav-tabs custom_tab custom_tab-tribe" role="tablist">
+                <li class=" col-xs-3 active"><a href="#tab_Band" role="tab" data-toggle="tab">Band</a></li>
+                <li class="col-xs-5"><a href="#tab_album_credits" role="tab" data-toggle="tab">Album Credits</a></li>
+                <li class="col-xs-4"><a href="#tab_links" role="tab" data-toggle="tab">links</a></li>
+            </ul>
+            <div class="tab-content tribe-tabs-contant">
+                <div class="tab-pane active" id="tab_Band">
+                    Tribe is a three piece band which formed in Los Angeles California. Guitarist Denner Vieira and Drummer Rick Pivetta Set out to Los Angeles from Brazil to break the boundaries of comfort, bringing their music and creativity to the center of western culture.
+                    <br/><br/>
+                </div><!-----/tab1------>
+                <div class="tab-pane" id="tab_album_credits">2</div>
+                <div class="tab-pane" id="tab_links" style="word-wrap:break-word;">3</div>
+            </div>
+        </div>
+    </div>
+    <!--content end-->
+    <!--footer end-->
+    <footer>
+    </footer>
+    <!--footer end-->
+</div>
+
+
+
+
+
+<div id="photo_full_page" class="container splsh_container splsh_container2" >
+    
+    
+    <header>
+        <div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+            <div onclick="photoListOpen()" class="col-xs-2" style="padding:4px 0 0 15px;">
+                <button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+                <p>Tribe - Atlas</p>
+            </div>
+            <div onclick="onShare()" class="col-xs-3" style="padding:5px 0 0 0;">
+                <div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" ><span style="color:#fff;font-size:17px;">
+                    <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </header>
+    
+    
+    
+    <!--content start-->
+    <div class="container" style="padding-top:2%;top:45px;position:relative;">
+     	<div class="col-xs-12">
+            
+            <div class="centered">
+                <img src="images/img2.png">
+                    </div>
+            
+        </div>
+    </div>
+    <!--content end-->
+</div>
+
+
+
+
+
+
+
+<!--
+
+    
+    <div id="photo_full_page" class="container splsh_container" >
+        
+        <header>
+            <div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+                <div class="col-xs-2" style="padding:4px 0 0 15px;">
+                    <button type="button" class="btn btn-custom" onclick="backButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+                </div>
+                <div class="col-xs-7 heading_main">
+                    <p>Tribe - Atlas</p>
+                </div>
+                <div class="col-xs-3" style="padding:5px 0 0 0;">
+                    <div class="col-xs-6" style="padding-left:0;"></div>
+                    <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:17px;">
+                        <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+        <div id="demo">
+            <div class="container" style="padding:0;">
+                <div class="col-md-12" style="padding:0;">
+                    <div id="sync1" class="owl-carousel sync1">
+                    </div>
+                    
+                    <div id="sync2" class="owl-carousel sync2">
+                        <div class="item" style="display: none" ><img width="100%" src="images/video_preview.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+
+
+<!-- <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script> -->
+
+   
+   
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>    
+<script type="text/javascript" src="js/bootstrap.js"></script>
+
+<script src="js/jquery-1.8.3.min.js"></script>   
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/utility.js"></script>
+<script type="text/javascript" src="js/SocialSharing.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+  
+<script src="js/owl.carousel.js"></script>
+
+
+
+<script type="text/javascript">
+    
+$(document).ready(function() {
+                  
+                  
+                 
+                  var sync1 = $("#sync1");
+                  var sync2 = $("#sync2");
+                  
+                  
+                  
+                  sync1.owlCarousel({
+                                    singleItem : true,
+                                    slideSpeed : 1000,
+                                    navigation: false,
+                                    pagination:false,
+                                    afterAction : syncPosition,
+                                    responsiveRefreshRate : 200,
+                                    });
+                  
+                  sync2.owlCarousel({
+                                    items : 15,
+                                    itemsDesktop      : [1199,5],
+                                    itemsDesktopSmall     : [979,5],
+                                    itemsTablet       : [768,5],
+                                    itemsMobile       : [479,5],
+                                    pagination:false,
+                                    responsiveRefreshRate : 100,
+                                    afterInit : function(el){
+                                    el.find(".owl-item").eq(0).addClass("synced");
+                                    }
+                                    });
+                  
+                    
+                  
+                  
+                  function syncPosition(el){
+                  var current = this.currentItem;
+                  
+                  //  alert("current="+current);
+                  
+                  $("#sync2")
+                  .find(".owl-item")
+                  .removeClass("synced")
+                  .eq(current)
+                  .addClass("synced")
+                  if($("#sync2").data("owlCarousel") !== undefined){
+                  center(current)
+                  }
+                  
+                  }
+                  
+                  $("#sync2").on("click", ".owl-item", function(e){
+                                 e.preventDefault();
+                                 var number = $(this).data("owlItem");
+                                 
+                                 
+                                 number = number -1 ;
+                                 //alert(" number= "+number);
+                                 
+                                 
+                                 sync1.trigger("owl.goTo",number);
+                                 });
+                  
+                  function center(number){
+                  var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
+                  
+                  var num = number;
+                  var found = false;
+                  for(var i in sync2visible){
+                  if(num === sync2visible[i]){
+                  var found = true;
+                  }
+                  }
+                  
+                  if(found===false){
+                  if(num>sync2visible[sync2visible.length-1]){
+                  sync2.trigger("owl.goTo", num - sync2visible.length+2)
+                  }else{
+                  if(num - 1 === -1){
+                  num = 0;
+                  }
+                  sync2.trigger("owl.goTo", num);
+                  }
+                  } else if(num === sync2visible[sync2visible.length-1]){
+                  sync2.trigger("owl.goTo", sync2visible[1])
+                  } else if(num === sync2visible[0]){
+                  sync2.trigger("owl.goTo", num-1)
+                  }
+                  }
+                  
+                  //alert("ready 3333");
+                  
+                  
+                 // document.addEventListener("deviceready", onDeviceReady, false);
+                  
+                  
+                  });
+    </script>
+
+
+
+</body>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+</html>

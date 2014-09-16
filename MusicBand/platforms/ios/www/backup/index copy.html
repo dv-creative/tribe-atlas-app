@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+<!-- Basic Meta and Title -->
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+</head>
+
+
+
+<body>
+<div class="container splsh_container">
+<!--header start-->   <!--header end-->
+    <!--content start-->
+        <div class="col-md-12 first_srcreen">
+           <div class="col-md-12" style="padding:0;">
+           		<div onclick="onShare()" class="social_button fb"><a href="#" ><img src="images/fb_icon.png"></a></div>
+           </div>
+           <div class="col-md-12" style="padding:0;">
+           		<div onclick="onShare()" class="tw"><a href="#" ><img src="images/twitter_icon.png"></a></div>
+           </div>  
+           <div class="col-md-12" >
+           		<div class="logo_div">
+                	<img src="images/logo.png">
+                </div>
+           </div>
+           <div class="col-md-12" style="padding:0;">
+                <div class="startup_player_button">
+                    <a href="#"><img onclick="playAlbumHomeScreen()" src="images/play_icon.png"></a>
+                </div>
+                <p class="button_name">PLAY ALBUM</p>
+           </div> 
+           
+           <div class="col-md-12" style="padding:0;bottom: 0;display: flex;padding: 0;position: static;">
+           		<div class="bottom_navigation">
+                	<ul>
+                        <li><a href="#" onclick="musicListOpen()">MUSIC</a></li>
+                        <li><a href="#" onclick="videolistOpen()">VIDEO</a></li>
+                        <li><a href="#" onclick="photoListOpen()">PHOTOS</a></li>
+                        <li><a href="#" onclick="tribeListOpen()">TRIBE</a></li>
+                    </ul>
+                </div>
+           </div>      
+        </div>
+        
+    <!--content end-->
+    <!--footer end-->
+    <footer>
+    </footer>
+<!--footer end-->
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="pg-plugin-screen-orientation.js"></script>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<script type="text/javascript" src="js/SocialSharing.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+
+<script type="text/javascript">
+	
+	document.addEventListener("deviceready", onDeviceReady, false);
+		
+	function onDeviceReady() {
+	
+	getAlbumInfo();
+	
+    }
+	
+</script>
+
+
+
+
+</body>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+</html>

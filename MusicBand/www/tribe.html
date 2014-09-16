@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+<!-- Basic Meta and Title -->
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    
+<div id="tribe_page" class="container splsh_container splsh_container2" style="display: table;">
+<!--header start-->
+    <header>
+    	<div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+        	<div class="col-xs-2" style="padding:4px 0 0 15px;">
+            	<button type="button" class="btn btn-custom" onclick="backButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            <div class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:17px;">
+                    <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    
+    
+    <!--content start-->
+     <div class="container" style="padding:0; top:45px;position:relative;">
+     	<div class="col-md-12 tribe-bg">
+        	<img src="images/tribe-bg.png">
+        </div>
+        <div class="col-md-12 tab_div">
+        	<ul class="nav nav-tabs custom_tab custom_tab-tribe" role="tablist">
+                <li class=" col-xs-3 active"><a href="#tab_Band" role="tab" data-toggle="tab">Band</a></li>
+                <li class="col-xs-5"><a href="#tab_album_credits" role="tab" data-toggle="tab">Album Credits</a></li>
+                <li class="col-xs-4"><a href="#tab_links" role="tab" data-toggle="tab">links</a></li>
+            </ul>
+            <div class="tab-content tribe-tabs-contant">
+              <div class="tab-pane active" id="tab_Band">
+                  Tribe is a three piece band which formed in Los Angeles California. Guitarist Denner Vieira and Drummer Rick Pivetta Set out to Los Angeles from Brazil to break the boundaries of comfort, bringing their music and creativity to the center of western culture.
+                <br/><br/>
+              </div><!-----/tab1------>
+              <div class="tab-pane" id="tab_album_credits">2</div>
+              <div class="tab-pane" id="tab_links" style="word-wrap:break-word;">3</div>          
+            </div>
+        </div> 
+     </div>
+    <!--content end-->
+    <!--footer end-->
+    <footer>
+    </footer>
+<!--footer end--> 
+</div>
+
+
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" charset="utf-8" src="pg-plugin-screen-orientation.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+     <script type="text/javascript" src="js/SocialSharing.js"></script>
+     <script type="text/javascript" src="js/common.js"></script>
+    
+    
+     <script type="text/javascript">
+	
+	document.addEventListener("deviceready", onDeviceReady, false);
+		
+	function onDeviceReady() {  
+	
+	//navigator.screenOrientation.set('portrait');
+	
+		
+			
+	var album_id = window.localStorage.getItem("Album_Id", album_id);	
+			
+	var album_name = window.localStorage.getItem("Album_Name");	
+	var description = window.localStorage.getItem("Album_Description");
+	var demo_link = window.localStorage.getItem("Album_Link");		
+	var album_image_full_path = window.localStorage.getItem("Album_Image_Path");	
+	
+	//alert("get album_id : "+album_id);	
+		
+	//alert("get album_name : "+ album_name);
+	//alert("get description : "+ description);
+	//alert("get demo_link : "+ demo_link);
+	//alert("get album_image_full_path : "+ album_image_full_path);
+	
+	 
+	$("#tab_Band").html(description);	
+	$("#tab_album_credits").html(album_name);	
+	$("#tab_links").html(demo_link);
+	
+	 
+	} 
+	function backButton()
+	{
+		window.location.href = 'index.html';    
+	}
+
+
+  
+</script>
+
+
+</body>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+</html>

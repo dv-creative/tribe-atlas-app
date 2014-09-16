@@ -1,0 +1,1186 @@
+<!doctype html>
+<html>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+<!-- Basic Meta and Title -->
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+<body>
+    
+    
+    <div class="container splsh_container">
+        
+        
+        <!--header start-->
+        <header>
+            <div class="col-md-12" style="display: inline-block;width: 100%;padding: 6px 0px 0px;">
+                <div class="col-xs-2" style="padding:4px 0 0 15px;">
+                    
+                    
+                    
+                    <button type="button" class="btn btn-custom" onclick="backButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+                    
+                    
+                </div>
+                <div class="col-xs-7 heading_main">
+                    <p>Tribe - Atlas</p>
+                </div>
+                
+                <!--
+                 <div class="col-xs-3" style="padding:5px 0 0 0;">
+                 <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:25px;"><i class="fa fa-share-square-o"></i></span></button></div>
+                 <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="homeButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-home"></i></span></button></div>
+                 </div>
+                 -->
+                
+                
+                <div class="col-xs-3" style="padding:5px 0 0 0;">
+                    <div class="col-xs-6" style="padding-left:0;"></div>
+                    <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:17px;">
+                        <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+        <!--header end-->
+        
+        
+        <!--content start-->
+        <div class="container" style="padding-top:2%;top:45px;position:relative;">
+            <div class="col-xs-12 main_box">
+                <div class="col-xs-5 left_box">
+                    <img src="images/img1.jpg" class="img-responsive">
+                        </div>
+                <div class="col-xs-7 right_box">
+                    <h5>atlas - 2014</h5>
+                    <!-- <center>11 gongs. 35 min</center>  -->
+                    <center><span id="total_songs">11</span> songs. <span id="total_times">11</span> min</center>
+                </div>
+            </div><!-----/main box------>
+            <div class="col-xs-12" style="padding:0;">
+                <ul class="nav nav-tabs custom_tab" role="tablist">
+                    <li class=" col-xs-3 active"><a onclick="playAllTab()" href="#music_list_div" role="tab" data-toggle="tab">play all</a></li>
+                    <li class="col-xs-5"><a href="#itunes" role="tab" data-toggle="tab">add to itunes</a></li>
+                    <li class="col-xs-4"><a onclick="shufflePlayTab()" href="#shuffle_music_list_div" role="tab" data-toggle="tab">shuffle play</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="music_list_div" style="margin-bottom:15px;">
+                    </div><!-----/tab1------>
+                    <div class="tab-pane" id="itunes">2</div>
+                    <div class="tab-pane" id="shuffle_music_list_div" style="margin-bottom:15px;">
+                        3          
+                    </div>          
+                    
+                </div>
+            </div><!------/tabs--------->
+        </div>
+        <!--content end-->
+        
+        <!--footer end-->
+        <footer>
+            
+        </footer>
+        <!--footer end-->
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--loading screen start-->
+    <div id="loading">
+        <h4 > Please Wait .... </h4>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<div id="music_player" class="container splsh_container" >
+
+
+<!--header start-->
+    <header style="position: absolute;width: 100%;z-index: 1000;">
+    	<div class="col-md-12" style="display: inline-block;padding: 10px 0px 0px;width: 100%;">
+        	<div class="col-xs-2" style="padding:4px 0 0 15px;">
+            	<button type="button" class="btn btn-custom" onclick="backButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            <div class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:17px;">
+                <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+               </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    
+    
+    <!--content start-->
+     <div class="container player-container"> 
+     	<div class="col-md-12 first_srcreen snd-srcn" style="">
+        	<div class="col-md-12" style="padding: 30% 0;">
+           		<div class="col-xs-2"></div>
+                <div class="col-xs-8">
+                	<img width="100%" src="images/logo.png">
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+        <div class="col-md-12 player_bottom plr-bg">
+        	<div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%; padding: 0 6px;">		
+            	<div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+           			<p class="song_name_playing song_title">Burn The Empire</p>
+                    <p class="song_name_playing" style="font-size:15px">Tribe - Atlas</p>
+            	</div>
+           		
+                <div class="col-md-12" style="display:inline-block;float: none;width: 100%;min-width: 100%; padding:0;">
+           		
+           		
+           		
+                  		 
+           	<span class="media-played time-start" id="media-played" style="text-align:right; padding-right:4px;">000:000</span>
+           		 <span style="" class="player-timer"><input  type="range" name="time-slider" id="time-slider" class="time-slider"  value="0" min="0" max="100"  data-highlight="true" /></span>
+           		 <span class="media-duration time-end" id="media-duration" style="text-align:left; padding-left:4px;">111:111</span>
+           		 
+           		 
+           		    
+           		
+            </div>
+            	<div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+                <div class="col-xs-12 player_nav">
+                	<div class="player_control">
+                    	<button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="previous_music_button" id="previous_music_button" width="100%" src="images/backward_button.png"></span></button>
+                    </div>
+                    <div class="player_control2" style="padding:0;">
+                    	<button type="button" class="btn btn-custom_player"><span style="font-size:52px;"><img class="player-play" id="player-play" width="100%" src="images/play_button.png"></span></button>                        	
+                    </div>
+                    <div class="player_control">
+                    	<button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="next_music_button" id="next_music_button" width="100%" src="images/forward_button.png"></span></button>
+                    </div>
+                </div>       		
+            </div>
+            
+            <div class="col-md-12 cstm-rng">
+            	   <div class="col-xs-2 volume-icon" style="">
+                 		<i class="fa fa-volume-down" style="color:#fff;"></i>
+                  </div>
+                <div class="col-xs-8 cstm-vlm">
+                	<input type="range" class="volume" id="volume" min="0" max="1" step="0.1" value="0.5" /> 
+                </div>
+                <div class="col-xs-2 volume-icon">
+                	<i class="fa fa-volume-up" style="color:#fff;"></i>
+                </div>           		
+            </div>
+            <div class="col-md-12 btm-playr-mnu">
+                	<div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player music_repeating">
+                        	<span class="change_repeading_icon rfresh">
+                            	<i class="fa fa-repeat"></i> REPEAT
+                            </span>
+                       </button>
+                    </div>
+                    <div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player music_shuffling">
+                        	<span class="change_shuffling_icon sfl">
+                            	<i class="fa fa-random"></i> SHUFFLE
+                            </span>
+                        </button>                        	
+                    </div>
+                    <div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player" onclick="openLyrics()">
+                        	<span class="change_lyrics_icon lrcs">
+                            	<i class="fa fa-list-ul"></i> LYRICS                            	
+                            </span>
+                       </button>
+                    </div>
+                    <div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player music_info">
+                        	<span class="change_musicinfo_icon info" style="">
+                            	<i  class="fa fa-info-circle"></i> INFO
+                           </span>
+                       </button>
+                    </div>   		
+            </div> 
+            </div>
+            
+            
+        </div>
+     </div>  
+     
+        
+    <!--content end-->
+    
+    
+    <!--footer end-->
+
+<!--footer end-->
+</div>
+
+
+
+
+<div id="music_player_wiht_lyrics" class="container splsh_container" style="display:none;">
+ 
+
+<!--header start-->
+    <header style="position: fixed;width: 100%;z-index: 1000;">
+    	<div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+        	<div class="col-xs-2" style="padding:4px 0 0 15px;">
+            	<button type="button" class="btn btn-custom" onclick="backButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            
+            <!--
+            <div class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:25px;"><i class="fa fa-share-square-o"></i></span></button></div>
+                <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="homeButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-home"></i></span></button></div>
+            </div>
+            -->
+            
+            
+            <div class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:17px;">
+                    <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            
+        </div>
+    </header>
+    <!--header end-->
+    
+    
+    <!--content start-->
+     <div class="container cntnr">
+     	<div class="col-md-12 cstm-plr2">
+        	<div class="col-md-12" style="padding-top:5%;">
+           		<div class="col-xs-12" style="padding:0;">
+                	<div class="pull-left" style="padding:0;">
+                    	<p style="color:#fff;text-transform:uppercase;font-size:20px;margin:0 0 5px 0;">Lost</p>
+                    </div>
+                    <div class="pull-right" style="padding-right:0;">
+                        	<button type="button" class="btn btn-custom" onclick="minimizeScreen()"><span style="color:#fff;"><img width="55%" src="images/window_icon.png"></span></button>
+                    </div>
+                </div>
+                
+                <p class="lyrics" style="color:#fff;">Come and get lost 
+in infinite space 
+leave with no trace 
+escape with me 
+
+Come down 
+Gravity , Ecstasy 
+Crash land 
+Reality 
+Goodbye serenity 
+
+The one
+Pray to the empty sun 
+Pray you’re the only one
+The one 
+
+We’ve built walls over our heads
+with a finger on the trigger 
+i still want more
+
+Pray to an empty sky 
+pray you’re the only one
+
+Come down 
+Gravity , Ecstasy 
+Crash land 
+Reality 
+Goodbye serenity 
+
+This is our way
+I love how you torture me </p>
+            </div>
+        </div>
+        <div class="col-md-12 player_bottom plr-bg">
+        	<div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%; padding: 0 6px;">		
+            	<div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+           			<p class="song_name_playing song_title">Burn The Empire</p>
+                    <p class="song_name_playing" style="font-size:15px">Tribe - Atlas</p>
+            	</div>
+           		
+                <div class="col-md-12" style="display:inline-block;float: none;width: 100%;min-width: 100%; padding:0;">
+           		
+           		
+           		
+                  		 
+           	<span class="media-played time-start" id="media-played" style="text-align:right; padding-right:4px;">000:000</span>
+           		 <span style="" class="player-timer"><input  type="range" name="time-slider" id="time-slider" class="time-slider"  value="0" min="0" max="100"  data-highlight="true" /></span>
+           		 <span class="media-duration time-end" id="media-duration" style="text-align:left; padding-left:4px;">111:111</span>
+           		 
+           		 
+           		    
+           		
+            </div>
+            	<div class="col-md-12" style="display: inline-block;float: none;width: 100%;min-width: 100%;">
+                <div class="col-xs-12 player_nav">
+                	<div class="player_control">
+                    	<button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="previous_music_button" id="previous_music_button" width="100%" src="images/backward_button.png"></span></button>
+                    </div>
+                    <div class="player_control2" style="padding:0;">
+                    	<button type="button" class="btn btn-custom_player"><span style="font-size:52px;"><img class="player-play" id="player-play" width="100%" src="images/play_button.png"></span></button>                        	
+                    </div>
+                    <div class="player_control">
+                    	<button type="button" class="btn btn-custom_player"><span style="font-size:48px;"><img class="next_music_button" id="next_music_button" width="100%" src="images/forward_button.png"></span></button>
+                    </div>
+                </div>       		
+            </div>
+            
+            <div class="col-md-12 cstm-rng">
+            	   <div class="col-xs-2 volume-icon" style="">
+                 		<i class="fa fa-volume-down" style="color:#fff;"></i>
+                  </div>
+                <div class="col-xs-8 cstm-vlm">
+                	<input type="range" class="volume" id="volume" min="0" max="1" step="0.1" value="0.5" /> 
+                </div>
+                <div class="col-xs-2 volume-icon">
+                	<i class="fa fa-volume-up" style="color:#fff;"></i>
+                </div>           		
+            </div>
+            <div class="col-md-12 btm-playr-mnu">
+                	<div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player music_repeating">
+                        	<span class="change_repeading_icon rfresh">
+                            	<i class="fa fa-repeat"></i> REPEAT
+                            </span>
+                       </button>
+                    </div>
+                    <div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player music_shuffling">
+                        	<span class="change_shuffling_icon sfl">
+                            	<i class="fa fa-random"></i> SHUFFLE
+                            </span>
+                        </button>                        	
+                    </div>
+                    <div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player" onclick="closeLyrics()">
+                        	<span class="change_lyrics_icon lrcs cstm-icons">
+                            	<i class="fa fa-list-ul"></i> LYRICS                            	
+                            </span>
+                       </button>
+                    </div>
+                    <div class="col-xs-3 text-center pd">
+                    	<button type="button" class="btn btn-custom_player music_info">
+                        	<span class="change_musicinfo_icon info" style="">
+                            	<i  class="fa fa-info-circle"></i> INFO
+                           </span>
+                       </button>
+                    </div>   		
+            </div> 
+            </div>
+            
+            
+        </div>
+     </div>  
+     
+        
+    <!--content end-->
+    
+    
+    <!--footer end-->
+
+<!--footer end-->
+</div>
+
+
+
+
+
+
+
+
+<div id="music_player_wiht_lyrics_minified"  class="container splsh_container splsh_container2" style="display:none;">
+
+
+<!--header start-->
+    <header>
+    	<div class="col-md-12" style="display: inline-block;padding: 6px 0px 0px;width: 100%;">
+        	<div class="col-xs-2" style="padding:4px 0 0 15px;">
+            	<button type="button" class="btn btn-custom" onclick="backButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-angle-left"></i></span></button>
+            </div>
+            <div class="col-xs-7 heading_main">
+            	<p>Tribe - Atlas</p>
+            </div>
+            
+            <!--
+            <div class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:25px;"><i class="fa fa-share-square-o"></i></span></button></div>
+                <div class="col-xs-6" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="homeButton()"><span style="color:#fff;font-size:25px;"><i class="fa fa-home"></i></span></button></div>
+            </div>
+            -->
+            
+            
+            <div class="col-xs-3" style="padding:5px 0 0 0;">
+            	<div class="col-xs-6" style="padding-left:0;"></div>
+                <div class="col-xs-6 text-right" style="padding-left:0;"><button type="button" class="btn btn-custom" onclick="onShare()"><span style="color:#fff;font-size:17px;">
+                    <i class="fa fa-share" style="margin-top:8px;"></i></span></button>
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+    </header>
+    <!--header end-->
+    
+    
+    <!--content start-->
+     <div class="container" style="padding-top:2%;top:45px;position:relative;">
+     	<div class="col-md-12" style="padding:0;height:50%;position:relative;">
+        	<div class="col-md-12" style="padding-top:5%;">
+           		<div class="col-xs-12" style="padding:0;">
+                	<div class="pull-left" style="padding:0;">
+                    	<p style="color:#fff;text-transform:uppercase;font-size:20px;margin:0 0 5px 0;">Lost</p>
+                    </div>
+                  
+                  <!--  <div class="pull-right" style="padding-right:0;">
+                        	<button type="button" class="btn btn-custom"><span style="color:#fff;"><img width="55%" src="images/window_icon.png"></span></button>
+                  </div> --> 
+                  
+                  
+                </div>
+                
+                <p class="lyrics" style="color:#fff;margin-bottom:100px;">Come and get lost 
+in infinite space 
+leave with no trace 
+escape with me 
+
+Come down 
+Gravity , Ecstasy 
+Crash land 
+Reality 
+Goodbye serenity 
+
+The one
+Pray to the empty sun 
+Pray you’re the only one
+The one 
+
+We’ve built walls over our heads
+with a finger on the trigger 
+i still want more
+
+Pray to an empty sky 
+pray you’re the only one
+
+Come down 
+Gravity , Ecstasy 
+Crash land 
+Reality 
+Goodbye serenity 
+
+This is our way
+I love how you torture me
+Come and get lost 
+in infinite space 
+leave with no trace 
+escape with me 
+
+Come down 
+Gravity , Ecstasy 
+Crash land 
+Reality 
+Goodbye serenity 
+
+The one
+Pray to the empty sun 
+Pray you’re the only one
+The one 
+
+We’ve built walls over our heads
+with a finger on the trigger 
+i still want more
+
+Pray to an empty sky 
+pray you’re the only one
+
+Come down 
+Gravity , Ecstasy 
+Crash land 
+Reality 
+Goodbye serenity 
+
+This is our way
+I love how you torture me
+</p>
+            </div>
+        </div>
+     </div>  
+     
+        
+    <!--content end-->
+    
+    
+    <!--footer end-->
+   	<div class="col-xs-12 minified_player">
+    	<div class="col-xs-3" style="padding:0;">
+        	<div class="song_author_img">
+            	<img width="100%" height="100%" src="images/img1.png">
+            	<button onclick="maximizeScreen()" class="btn btn-custom" type="button"><span style="color:#fff;"><img width="55%" src="images/window_icon2.png"></span></button>
+            </div>
+        </div> 
+        <div class="col-xs-9 mini-player-bottom" style="padding:0;">
+        	
+            <div class="col-xs-6 burn-player-div">
+            	<h4 class="burn-text song_title">Burn The Empire</h4>
+                <span class="tribe-text">TRIBE - ATLAS</span>
+                
+            </div>
+            <div class="col-xs-6 play-btn-div">
+            	<div class="music-play-btns">
+                	<button type="button" class="btn play-btns-custom">
+                    	<img class="previous_music_button" id="previous_music_button" src="images/backward_button.png">
+                    </button>
+                </div>
+                <div class="music-play-btns">
+                	<button type="button" class="btn play-btns-custom"><img class="player-play" id="player-play" src="images/play_button.png"></button>
+                </div>
+                <div class="music-play-btns">
+                	<button type="button" class="btn play-btns-custom"><img class="next_music_button" id="next_music_button"  src="images/forward_button.png"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--footer end-->
+</div>
+
+
+
+
+
+
+  
+
+
+<!-- <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script> -->
+
+   
+   
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>    
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="pg-plugin-screen-orientation.js"></script>
+<script src="js/jquery-1.8.3.min.js"></script>   
+   <script type="text/javascript" src="cordova.js"></script>
+ <script type="text/javascript" src="js/utility.js"></script> 
+ <script type="text/javascript" src="js/SocialSharing.js"></script>    
+    <script type="text/javascript" src="js/common.js"></script>     
+    
+    <script type="text/javascript">
+    
+    
+    var current_index = 0;    
+    var total_index = 0 ;    
+    var music_list_data_array ;
+    var song_path; 
+    var repeating_on_off = 0;
+	
+	document.addEventListener("deviceready", onDeviceReady, false);
+    
+    
+    
+    function pageShowOtherHide(pageDivId)
+    {
+         $("#music_player").hide();
+        $("#music_player_wiht_lyrics").hide();
+        $("#music_player_wiht_lyrics_minified").hide();
+        $("#"+pageDivId+"").show();
+        
+    }
+    
+    
+		
+	function onDeviceReady() {
+        
+        
+        pageShowOtherHide("music_player");
+   
+   
+	  
+	var storage_start_index = window.localStorage.getItem("Music_Start_Index");
+	
+	current_index = parseInt(storage_start_index);
+	
+		
+	song_path = window.localStorage.getItem("Song_Path"); 
+	    
+	music_list_data_array = JSON.parse(window.localStorage.getItem("Music_List"));		
+	total_index = music_list_data_array.length;	
+	
+	 $(".song_title").html(music_list_data_array[current_index].audio_name);
+	
+	
+    
+    
+	startAudoiSong(current_index);	     
+	 
+	 
+ ///////////////////////////////////// Custum Player code start her ///////////////////////////////////////////////////////
+	     
+//initMedia("http://codewaretechnologies.com/snapflix/video_files/02%20Banjaara%20-%20Ek%20Villain%20%28PagalWorld.com%29190Kbps.mp3");
+ 
+   $('.player-play').click(function() {
+   	
+    playAudio();
+  });  
+  
+   $('.player-stop').click(function() {   	
+     stop();
+  });              
+  
+  
+
+  
+   $('.music_repeating').click(function() {   	
+     // alert("repeating click");      
+      
+      
+      if(repeating_on_off == 0)
+      {      	
+      	repeating_on_off = 1;
+      	//alert("Current song repeating on");
+      	      	
+      	$( ".change_repeading_icon").addClass("cstm-icons");
+      }
+      else
+      {      
+      	 repeating_on_off = 0;
+      	// alert("Current song repeating off");
+      	 $( ".change_repeading_icon").removeClass("cstm-icons");
+      } 
+      
+       window.localStorage.setItem("Repeating",repeating_on_off);      
+
+      
+  }); 
+  
+  var music_shuffling_on_off = 0;
+   
+     $('.music_shuffling').click(function() {
+                                 
+      
+      
+       if(music_shuffling_on_off == 0)
+      {
+        
+      	   music_shuffling_on_off = 1;
+           $( ".change_shuffling_icon").addClass("cstm-icons");
+      }
+      else
+      {
+           
+           music_shuffling_on_off = 0;
+           $( ".change_shuffling_icon").removeClass("cstm-icons");
+      }
+      	
+      
+      
+      
+      shufflePlayTab();
+  }); 
+  
+  
+   var music_info = 0;
+   
+     $('.music_info').click(function() {   	
+     
+      //alert("music_info click");
+      
+        if(music_info == 0)
+      {
+      	 music_info = 1;
+      	 $( ".change_musicinfo_icon").addClass("cstm-icons");
+      }
+      else
+      {
+      	 music_info = 0;
+      	 $( ".change_musicinfo_icon").removeClass("cstm-icons");
+      }
+  }); 
+  
+  
+    
+  /*  
+  $('.next_music_button').click(function() {        
+      stop();
+      alert("current_index="+current_index);
+	  alert("total_index="+total_index);	  
+	  if(current_index >= total_index -1)
+	  {
+	     current_index = 0;	
+	  }
+	  else
+	  {
+	     current_index = current_index + 1;	
+	  }	   
+	  alert("current_index="+current_index);
+	  startAudoiSong(current_index);    	  
+  });   
+  
+  $('.previous_music_button').click(function() {     	 
+        stop();
+       alert("current_index="+current_index);
+	   alert("total_index="+total_index); 	   
+	  if(current_index <= 0)
+	  {
+	     current_index = total_index-1;	
+	  }
+	  else
+	  {
+	      current_index = current_index - 1;	   
+	  }	 
+	   alert("current_index="+current_index);	   	
+	   startAudoiSong(current_index); 
+  });    
+  */ 
+  
+  
+  
+    $('.next_music_button').click(function() {        
+    
+     // alert("current_index="+current_index);
+	 // alert("total_index="+total_index);	  
+	  if(current_index >= total_index -1)
+	  {
+	     current_index = 0;	
+	  }
+	  else
+	  {
+	     current_index = current_index + 1;	
+	  }	   
+	
+	  
+	window.localStorage.setItem("Music_Start_Index", current_index);
+    window.location.href = 'music_player_common.html';  
+    
+		  
+  });   
+
+
+  
+  $('.previous_music_button').click(function() {      
+      
+	  if(current_index <= 0)
+	  {
+	     current_index = total_index-1;	
+	  }
+	  else
+	  {
+	      current_index = current_index - 1;	   
+	  }	 	   
+	   window.localStorage.setItem("Music_Start_Index", current_index);
+       window.location.href = 'music_player_common.html';        	
+	  
+  });   
+  
+  
+	
+	
+	
+	 
+    
+    
+    
+  $('.time-slider').bind('change', function() {   	  
+    seekPosition($(this).val());
+   });
+
+	$('.volume').bind('change', function() {	 	
+    setVolume($(this).val());
+});
+  
+ ///////////////////////////////////// Custum Player code end  her //////////////////////////////////////////////////
+	 	
+	}
+	
+	
+	function startAudoiSong(current_index)
+	{
+        
+       
+		var audio_file= music_list_data_array[current_index].audio_file;			
+		var audio_lyrics= music_list_data_array[current_index].audio_lyrics;		
+		$(".lyrics").html(audio_lyrics);		
+		// song_path = "http://codewaretechnologies.com/music_band/audio_files/";			
+		audio_file_full_path = song_path+audio_file;
+        
+        
+          
+		initMedia(audio_file_full_path);   
+    
+	} 
+	
+	
+	function backButton()
+	{
+		window.location.href = 'music.html';    
+	}
+	
+	
+	function openLyrics () {	  
+	// $("#music_player").hide();
+	// $("#music_player_wiht_lyrics").show();
+	 // $("#music_player_wiht_lyrics_minified").hide();
+     
+     pageShowOtherHide("music_player_wiht_lyrics");
+     
+	}
+	
+	function closeLyrics()
+	{
+        
+	  //$("#music_player").show();
+	  //$("#music_player_wiht_lyrics").hide();
+	  //$("#music_player_wiht_lyrics_minified").hide();
+      
+       pageShowOtherHide("music_player");
+	}
+	
+	
+	function onShare()
+{
+	
+    window.plugins.socialsharing.share('CodeWare Technologies ',
+      null,
+      null,
+      'http://codewaretechnologies.com');  
+            
+}
+  
+  
+  
+  function minimizeScreen()
+  {
+  
+    // $("#music_player").hide();
+	 
+	// $("#music_player_wiht_lyrics").hide();
+	 
+	// $("#music_player_wiht_lyrics_minified").show();
+     
+     
+     pageShowOtherHide("music_player_wiht_lyrics_minified");
+	  
+  }
+  
+  
+ function maximizeScreen()
+ {
+ 
+  $("#music_player").hide(); 
+	 
+	 $("#music_player_wiht_lyrics").show(); 
+	 
+	 $("#music_player_wiht_lyrics_minified").hide(); 
+ 
+ }
+ 
+ 
+ //////////////////////////// function of custom player start here ////////////////////////////
+   
+        var my_media = null;
+        var mediaTimer = null;        
+        var isPlaying = false;        
+        var audio_file_path;
+        
+        function initMedia(src) {
+            
+        	 audio_file_path = src;
+              
+        	 my_media = new Media(src, onSuccess, onError);
+              
+        	 playAudio();        	
+        }
+      
+        function playAudio() {  
+        
+        //alert("playAudio my_media = "+ my_media);
+        //  alert("playAudio isPlaying = "+ isPlaying);
+          
+                 
+           if (my_media === null)
+           {
+               
+           	 initMedia(audio_file_path);
+           }
+	if (isPlaying === false)
+	  {
+          
+           $("#loading").show();
+          
+                my_media.play();
+            	 
+                $("#loading").hide();
+                 
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                                         
+                      
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                            	
+                                //setAudioPosition((position) + " sec");
+                                
+                                $('.media-played').text(Utility.formatTime(position));
+                                updateSliderPosition(position);
+                            }
+                        }, 
+                        // error callback
+                        function(e) {
+                            alert("Error getting pos=" + e);
+                           // setAudioPosition("Error: " + e);
+                            $('.media-played').text(Utility.formatTime(0));
+                            
+                        }
+                    );
+                }, 1000);
+                  
+                
+                  
+         var counter = 0;
+         var timerDuration = setInterval(
+            function() {
+               counter++;
+               
+               console.log("counter=" + counter);
+               
+               if (counter > 20)
+                  clearInterval(timerDuration);
+ 
+               var duration = my_media.getDuration();
+               
+                console.log("duration=" + duration);
+               
+              // alert("duration"+duration);
+                                         
+                                         
+               
+               if (duration > -1)
+               {
+                  clearInterval(timerDuration);
+                  $('.media-duration').text(Utility.formatTime(duration));
+                  $('.time-slider').attr('max', Math.round(duration));
+                  $('.time-slider').slider('refresh');
+               }
+               else
+                  $('.media-duration').text('Unknown');  
+            },
+            900 
+         );
+                     
+             changePlayButton('images/pause_button.png');         
+             
+        }  //if check 
+        
+        else
+        {        	
+         my_media.pause();
+         clearInterval(mediaTimer);
+         changePlayButton('images/play_button.png');     
+        }   
+        
+         isPlaying = !isPlaying;        
+       }
+              
+        
+        function onSuccess() {       
+        	
+        	/*
+           	 
+            alert("playAudio():Audio Success completed"); 
+            isPlaying = false;          
+           	resetLayout();  
+           	
+           	*/
+           	
+			
+			
+			repeating_on_off = window.localStorage.getItem("Repeating");
+			  
+			//  alert("repeating_on_off"+repeating_on_off);
+			  
+			  if (repeating_on_off == null || repeating_on_off == 0)
+			  {
+			  	
+			  	
+					 if(current_index >= total_index -1)
+					  {
+					     current_index = 0;	
+					  }
+					 else
+					  {
+					     current_index = current_index + 1;	
+					  }				
+					  
+					window.localStorage.setItem("Music_Start_Index", current_index);
+					
+				//	alert("after current index = "+current_index); 
+					
+					window.location.href = 'music_player_common.html'; 
+			
+			
+			  }
+			  
+			  else
+			  {
+			  	
+			  	
+			  	 isPlaying = false;
+			  	 playAudio();
+			  }
+			
+			
+			  
+    
+    
+    
+    
+    
+               	               
+        }
+      
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' + 
+                  'message: ' + error.message + '\n');
+                  
+                   $("#loading").hide();
+                  
+        }
+
+       
+        function setAudioPosition(position) {
+            document.getElementById('audio_position').innerHTML = position;
+        }        
+       
+    function updateSliderPosition(seconds) { 
+    	
+    
+    	
+      var $slider = $('.time-slider');
+ 
+      if (seconds < $slider.attr('min'))
+         $slider.val($slider.attr('min'));
+      else if (seconds > $slider.attr('max'))
+         $slider.val($slider.attr('max'));
+      else
+         $slider.val(Math.round(seconds));
+ 
+ 
+
+ 
+ 
+      $slider.slider('refresh');
+   }
+   
+   
+   function changePlayButton(imageName) {
+    
+ //  alert('change button play pause');
+   $('.player-play').attr("src", imageName);
+   
+   
+      /*
+      var background = $('.player-play')
+      .css('background-image')
+      .replace('url(', '')
+      .replace(')', '');
+ 
+      $('.player-play').css(
+         'background-image',
+         'url(' + background.replace(/images\/.*\.png$/, 'images/' + imageName + '.png') + ')'
+      );
+      
+      */ 
+   }   
+   
+  function stop() {
+  	
+  	alert("stop called");
+    //  if (my_media !== null)
+     // {
+         my_media.stop();
+        my_media.release();
+     // }
+     
+     
+      clearInterval(mediaTimer);
+      my_media = null;
+      isPlaying = false;
+      resetLayout();      
+      
+      
+      
+   }
+   
+   
+   function resetLayout() {      	
+      $('.media-played').text(Utility.formatTime(0));
+      changePlayButton('images/play_button.png');    
+      updateSliderPosition(0);    
+   }
+   
+   
+   
+  function seekPosition(seconds) {  	
+  //	alert("seekPosition seconds"+seconds);  	  
+      if (my_media === null)
+         return;
+ 
+      my_media.seekTo(seconds * 1000);      
+      updateSliderPosition(seconds);      
+   }
+   
+   
+   function setVolume (volume_value) {  
+   	      
+			 my_media.setVolume(volume_value);
+			 var $value_slider = $('.volume');
+			  $value_slider.val(volume_value);
+			 $value_slider.slider('refresh');
+      } 
+ 
+ 
+ ///////////////////////////  function of custom player ende here ////////////////////////////
+   
+  
+</script>
+
+
+  
+</body>
+<!-- Design by Asif H. Ansari Codeware Technologies -->
+</html>
